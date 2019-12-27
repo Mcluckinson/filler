@@ -3,44 +3,75 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+         #
+#    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/05/03 17:33:08 by cyuriko           #+#    #+#              #
-#    Updated: 2019/05/13 13:42:44 by cyuriko          ###   ########.fr        #
+#    Created: 2019/04/06 18:14:41 by sleonia           #+#    #+#              #
+#    Updated: 2019/12/25 11:07:41 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+.PHONY: all, $(NAME), norm, clean, fclean, re
+
+#****************************************************************************#
+#					SETTINGS FOR CONCLUSION IN CONSOLE 						 #
+#****************************************************************************#
+
+BLACK = \033[30m
+RED = \033[31m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+PINK = \033[35m
+AQUA = \033[36m
+GREY = \033[37m
+UNDERLINE = \033[4m
+NORMAL = \033[0m
+
+#****************************************************************************#
+#									LIBFT 									 #
+#****************************************************************************#
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror -I. -c
+MAKE_DIR = ./Makefiles/
+OBJ_PATH = ./objects/
+OBJ_ERROR_PATH = ./objects/error/*
+OBJ_IO_PATH = ./objects/io/*
+OBJ_MEMORY_PATH = ./objects/memory/*
+OBJ_SORT_PATH = ./objects/sort/*
+OBJ_STRING_PATH = ./objects/string/*
+OBJ_VECTOR_PATH = ./objects/vector/*
 
-SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memalloc.c\
-ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_strcat.c ft_strchr.c\
-ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c\
-ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c\
-ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
-ft_tolower.c ft_toupper.c ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c\
-ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstdelone.c ft_lstdel.c ft_lstnew.c ft_lstadd.c ft_lstiter.c\
-ft_lstmap.c ft_delarr.c ft_lstdelcont.c ft_power.c ft_lstcount.c ft_lstfind.c ft_listlast.c get_next_line.c\
-ft_swap.c
+OBJ = $(OBJ_ERROR_PATH) $(OBJ_IO_PATH) $(OBJ_MEMORY_PATH) $(OBJ_SORT_PATH) $(OBJ_STRING_PATH) $(OBJ_VECTOR_PATH)
 
-OBJ = $(SRC:%.c=%.o)
-
-HEADER = libft.h
+#****************************************************************************#
+#									ALL 									 #
+#****************************************************************************#
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME):
+	@make -f $(MAKE_DIR)error.mk
+	@make -f $(MAKE_DIR)io.mk
+	@make -f $(MAKE_DIR)memory.mk
+	@make -f $(MAKE_DIR)sort.mk
+	@make -f $(MAKE_DIR)string.mk
+	@make -f $(MAKE_DIR)vector.mk
+	@echo "\n\t\t\t$(PINK)🎊 LIBFT READY!🎊$(BLACK)"
+	@ar -rc $(NAME) $(OBJ) $?
+	@ranlib $(NAME)
 
-$(OBJ): 
-	gcc $(CFLAGS) $(SRC)
+#****************************************************************************#
+#									OTHER			 						 #
+#****************************************************************************#
 
-clean:
-	/bin/rm -f $(OBJ)
+norm:
+	norminette -R CheckForbiddenSourceHeader
 
-fclean:	clean
-	/bin/rm -f $(NAME)
+clean: 
+	@/bin/rm -rf $(OBJ_PATH)
 
-re:	fclean all
+fclean: clean
+	@/bin/rm -f $(NAME)
+
+re: fclean all
