@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 17:48:50 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/27 19:23:01 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 19:43:29 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_env				*init_env(void)
 	if (!(env = (t_env *)ft_memalloc(sizeof(t_env))))
 		return (NULL);
 	env->p_num = 0;
-	env->symbol = 0;
+	env->player_symbol = 0;
+	env->opponent_symbol = 0;
 	if (!(env->map = init_map()))
 	{
 		ft_memdel((void *)&env);

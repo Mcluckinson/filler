@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/27 19:19:32 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 19:45:11 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int 	main()
 
 	if (!(env = init_env()))
 		return (int_error(ERROR_MALLOC));
-	find_player(env);
+	if (!(parse_player(env)))
+		return (int_error(ERROR_INPUT));
 	return (0);
 }

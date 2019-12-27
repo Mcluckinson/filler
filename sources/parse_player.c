@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 19:13:18 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/27 19:17:11 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 19:44:33 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 bool	parse_player(t_env *env)
 {
-	int	res = 0;
-	// env->;
 	char *line;
-	if ((res = get_next_line(0, &line)) == 1)
+
+	if (get_next_line(0, &line))
 	{
 		if (ft_strequ(line, PLAYER_1) == 1)
-			res = 1;// ft_exit("LOL1");
+		{
+			env->player_symbol = PLAYER_1_SYMB;
+			env->opponent_symbol = PLAYER_2_SYMB;
+		}
 		else if (ft_strequ(line, PLAYER_2) == 1)
-			res = 2;// ft_exit("LOL2");
+		{
+			env->opponent_symbol = PLAYER_1_SYMB;	
+			env->player_symbol = PLAYER_2_SYMB;
+		}
 	}
-	printf("\033[31m%d\n", res);
-	if (res == 1)
-		ft_exit("LOL1");
-	else if (res == 2)
-		ft_exit("LOL2");
+	else
+		return (false);
+	return (true);
 }
