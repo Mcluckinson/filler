@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 19:13:18 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/27 21:09:04 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 23:06:48 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ bool	parse_player(t_env *env)
 		return (false);
 	if (ft_strequ(line, PLAYER_1) == 1)
 	{
-		env->player_symbol = PLAYER_1_SYMB;
-		env->opponent_symbol = PLAYER_2_SYMB;
+		env->player_symbol = PLAYER_1_SYMB_BIG;
+		env->opponent_symbol = PLAYER_2_SYMB_BIG;
 	}
 	else if (ft_strequ(line, PLAYER_2) == 1)
 	{
-		env->opponent_symbol = PLAYER_1_SYMB;
-		env->player_symbol = PLAYER_2_SYMB;
+		env->opponent_symbol = PLAYER_1_SYMB_BIG;
+		env->player_symbol = PLAYER_2_SYMB_BIG;
 	}
 	ft_strdel(&line);
 	return (true);

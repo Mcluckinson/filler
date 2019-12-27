@@ -32,6 +32,9 @@ SRC_NAME =	free_things.c		\
 			ft_get_line.c		\
 			read_map.c			\
 			skip_line.c			\
+			count_heat.c		\
+			work_with_heatmap.c	\
+			
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

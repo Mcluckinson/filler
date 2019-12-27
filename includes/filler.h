@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 15:37:46 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/27 21:14:58 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 00:32:14 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@
 # define MAP_H 1000
 # define MAP_W 1000
 
-# define PLAYER_1		"$$$ exec p1 : [./cyuriko.filler]"
-# define PLAYER_2		"$$$ exec p2 : [./cyuriko.filler]"
-# define PLAYER_1_SYMB	'X'
-# define PLAYER_2_SYMB	'0'
-# define PLATEAU		"Plateau"
+# define PLAYER_1				"$$$ exec p1 : [./cyuriko.filler]"
+# define PLAYER_2				"$$$ exec p2 : [./cyuriko.filler]"
+# define PLAYER_1_SYMB_BIG		'X'
+# define PLAYER_2_SYMB_BIG		'O'
+# define PLATEAU				"Plateau"
+# define MY_HEAT				-1
+# define OPPONENT_HEAT			-2
 
 typedef struct 		s_piece
 {
@@ -73,5 +75,6 @@ char	*ft_get_line(void);
 
 bool		read_map(t_env *env);
 bool		skip_line(int nbr);
-
+void			count_heat(int x, int y, t_map *map);
+bool			init_heatmap(t_env *env);
 #endif
