@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 15:37:46 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/27 21:06:34 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 21:14:58 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ bool			parse_player(t_env *env);
 bool			parse_plateau(t_env *env);
 
 char	*ft_get_line(void);
+
+bool		read_map(t_env *env);
+bool		skip_line(int nbr);
 
 #endif

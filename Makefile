@@ -30,6 +30,8 @@ SRC_NAME =	free_things.c		\
 			init.c				\
 			parse_player.c		\
 			ft_get_line.c		\
+			read_map.c			\
+			skip_line.c			\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

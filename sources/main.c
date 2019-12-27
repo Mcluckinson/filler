@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/27 21:06:26 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 21:42:41 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ int 	main()
 		return (int_error(ERROR_INPUT));
 	if (!(parse_plateau(env)))
 		return (int_error(ERROR_INPUT));
-	// ft_strdel(&line);
+	if (!(create_heatmap()))
+	read_map(env);
+
 	
-	ft_putchar_fd(env->player_symbol, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putchar_fd(env->opponent_symbol, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(env->map->height, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(env->map->width, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putstr_fd(line, fd);
+	// ft_putchar_fd(env->player_symbol, fd);
+	// ft_putchar_fd('\n', fd);
+	// ft_putchar_fd(env->opponent_symbol, fd);
+	// ft_putchar_fd('\n', fd);
+	// ft_putnbr_fd(env->map->height, fd);
+	// ft_putchar_fd('\n', fd);
+	// ft_putnbr_fd(env->map->width, fd);
+	// while (1) ;
 	return (0);
 }
