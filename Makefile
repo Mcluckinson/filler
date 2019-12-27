@@ -29,6 +29,7 @@ SRC_NAME =	free_things.c		\
 			transform_to_heat.c	\
 			init.c				\
 			parse_player.c		\
+			ft_get_line.c		\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

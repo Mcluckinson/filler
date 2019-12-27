@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 15:37:46 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/27 19:46:31 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/27 21:06:34 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define PLAYER_2		"$$$ exec p2 : [./cyuriko.filler]"
 # define PLAYER_1_SYMB	'X'
 # define PLAYER_2_SYMB	'0'
+# define PLATEAU		"Plateau"
 
 typedef struct 		s_piece
 {
@@ -37,8 +38,8 @@ typedef struct 		s_piece
 
 typedef struct 		s_map
 {
-	int 			x;////actually its height
-	int 			y;////actually its width oh god why
+	int 			height;////actually its height
+	int 			width;////actually its width oh god why
 	char			**map;////the map itself
 	int 			**heatmap;////transformed heatmap
 }					t_map;
@@ -66,5 +67,8 @@ int 	main();
 **	parse_player.c
 */
 bool			parse_player(t_env *env);
+bool			parse_plateau(t_env *env);
+
+char	*ft_get_line(void);
 
 #endif
