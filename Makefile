@@ -33,6 +33,9 @@ SRC_NAME =	free_things.c		\
 			work_with_heatmap.c	\
 			read_map.c			\
 			parse_piece.c		\
+			ft_free.c			\
+			put_piece.c			\
+			shift_x.c			\
 
 
 OBJ_NAME = $(SRC_NAME:.c=.o)

@@ -78,6 +78,7 @@ static bool	cut_and_transform_to_int_piece(t_piece *piece)
 	int		w;
 
 	h = -1;
+	piece->leftmost = piece->width;
 	if (!(piece->piece_map = piece_map(piece->height, piece->width)))
 		return (false);
 	while (++h < piece->height)
@@ -86,7 +87,17 @@ static bool	cut_and_transform_to_int_piece(t_piece *piece)
 		while (++w < piece->width)
 		{
 			if (piece->piece[h][w] == '*')
+			{
 				piece->piece_map[h][w] = 1;
+				if (piece->leftmost > w)
+					piece->leftmost = w;
+				if (piece->up == -1)
+					piece->up = h;
+				if (piece->down < h)
+					piece->down = h;
+				if (piece->rightmost < w)
+					piece->rightmost = w;
+			}
 		}
 	}
 	return (true);

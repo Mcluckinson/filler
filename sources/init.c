@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 17:48:50 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/28 03:48:05 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 07:49:43 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ static t_piece		*init_piece(void)
 
 	if (!(piece = (t_piece *)ft_memalloc(sizeof(t_piece))))
 		return (NULL);
+	piece->leftmost = 2147483647;
+	piece->rightmost = -1;
+	piece->up = -1;
+	piece->down = -1;
 	return (piece);
 }
 

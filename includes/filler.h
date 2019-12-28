@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 15:37:46 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/28 04:03:55 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 07:49:53 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ typedef struct 		s_piece
 	int 			**piece_map;/////piece_map_for_heat_map
 	int 			x_pos;/////position
 	int 			y_pos;/////position
+	int				leftmost;
+	int				rightmost;
+	int				down;
+	int				up;
 }					t_piece;
 
 typedef struct 		s_map
@@ -80,4 +84,5 @@ bool		skip_line(int nbr);
 void			count_heatmap(t_map *map);
 bool			init_heatmap(t_env *env);
 bool		parse_piece(t_piece *piece);
+void		new_cropped_map(t_piece *piece);
 #endif
