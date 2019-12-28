@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 05:30:04 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/28 08:45:31 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 09:37:33 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,18 @@ static bool		put_piece(t_env *env, int h, int w)
 		while (++w_counter < env->piece->width)
 		{
 			if (env->map->heatmap[h + h_counter][w + w_counter] == -1 
-			&& env->piece->piece_map[h][w] == 1)
+			&& env->piece->piece_map[h_counter][w_counter] == 1)
 				crosscounter++;
 			if ((env->map->heatmap[h + h_counter][w + w_counter] == -2 
-			&& env->piece->piece_map[h][w] == 1))
+			&& env->piece->piece_map[h_counter][w_counter] == 1))
 				return (false);
 			if (env->map->heatmap[h + h_counter][w + w_counter] > 0 
-			&& env->piece->piece_map[h][w] == 1 && 
+			&& env->piece->piece_map[h_counter][w_counter] == 1 && 
 			env->map->heatmap[h + h_counter][w + w_counter] < env->max_heat)
 				max_heat = env->map->heatmap[h + h_counter][w + w_counter];
-			
 		}
 	}
-	if (max_heat < env->max_heat && crosscounter == 1)
+	if (max_heat > env->max_heat || crosscounter == 1) //тут что-то менял
 	{
 		env->max_heat = max_heat;
 		env->best_y = h;
@@ -56,17 +55,21 @@ static bool		check_piece(t_env *env)
 	return (false);
 }
 
-bool		try_it_out(t_env *env)
+bool		try_it_out(t_env *env) //хуево работает
 {
 	int	h;
 	int	w;
 
 	h = -1;
+	env->max_heat = 2147483647;
 	while (++h < env->map->height - env->piece->height)
 	{
 		w = -1;
 		while (++w < env->map->width - env->piece->width)
-			put_piece(env, h, w);
+		{
+			if (!(put_piece(env, h, w)))
+				return (false);
+		}
 	}
 	return (check_piece(env));
 }
