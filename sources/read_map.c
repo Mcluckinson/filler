@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 21:09:49 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/28 00:32:24 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 03:56:22 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static char	**create_map(int height, int width)
 {
-	int		h_counter;
 	char	**map;
 
-	h_counter = -1;
 	if (!(map = ft_memalloc(sizeof(char*) * height)))
 		return (NULL);
 	return (map);

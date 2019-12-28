@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 21:43:08 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/28 00:37:47 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 01:57:27 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ static int		**create_heatmap(int height, int width)
 	return (heatmap);
 }
 
-static void		fill_heatmap(t_env *env)
-{
-	int	w_counter;
-	int	h_counter;
+// static void		fill_heatmap(t_env *env)
+// {
+// 	int	w_counter;
+// 	int	h_counter;
 
-	h_counter = -1;
-	while (++h_counter < env->map->height)
-	{
-		w_counter = -1;
-		while (++w_counter < env->map->width)
-		{
-			count_heat(h_counter, w_counter, env->map);
-		}
-	}
-}
+// 	h_counter = -1;
+// 	while (++h_counter < env->map->height)
+// 	{
+// 		w_counter = -1;
+// 		while (++w_counter < env->map->width)
+// 		{
+// 			count_heat(h_counter, w_counter, env->map);
+// 		}
+// 	}
+// }
 
 bool			init_heatmap(t_env *env)
 {
@@ -68,6 +68,6 @@ bool			init_heatmap(t_env *env)
 				env->map->heatmap[h_counter][w_counter] = OPPONENT_HEAT;
 		}
 	}
-	fill_heatmap(env);
+	count_heatmap(env->map);
 	return (true);
 }

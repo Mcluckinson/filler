@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 15:37:46 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/28 00:32:14 by sleonia          ###   ########.fr       */
+/*   Updated: 2019/12/28 04:03:55 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@
 # define PLATEAU				"Plateau"
 # define MY_HEAT				-1
 # define OPPONENT_HEAT			-2
+# define ENEMY_SYMBOL			0
+int fd;
 
 typedef struct 		s_piece
 {
-	int 			x;////actually its height
-	int 			y;////actually its width oh god why
+	int 			height;////actually its height
+	int 			width;////actually its width oh god why
 	char			**piece;////the piece itself
 	int 			**piece_map;/////piece_map_for_heat_map
 	int 			x_pos;/////position
@@ -75,6 +77,7 @@ char	*ft_get_line(void);
 
 bool		read_map(t_env *env);
 bool		skip_line(int nbr);
-void			count_heat(int x, int y, t_map *map);
+void			count_heatmap(t_map *map);
 bool			init_heatmap(t_env *env);
+bool		parse_piece(t_piece *piece);
 #endif

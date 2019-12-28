@@ -25,16 +25,15 @@ FLAGS = 	-Wall -Werror -Wextra -Ofast -g
 
 SRC_NAME =	free_things.c		\
 			main.c				\
-			service.c			\
-			transform_to_heat.c	\
 			init.c				\
 			parse_player.c		\
 			ft_get_line.c		\
-			read_map.c			\
+			count_heatmap.c		\
 			skip_line.c			\
-			count_heat.c		\
 			work_with_heatmap.c	\
-			
+			read_map.c			\
+			parse_piece.c		\
+
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
