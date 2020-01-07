@@ -25,8 +25,8 @@
 # define PLAYER_1_SYMB_BIG		'X'
 # define PLAYER_2_SYMB_BIG		'O'
 # define PLATEAU				"Plateau"
-# define MY_HEAT				-1
-# define OPPONENT_HEAT			-2
+# define MY_HEAT				-2
+# define OPPONENT_HEAT			-1
 # define ENEMY_SYMBOL			0
 int fd;
 
@@ -38,8 +38,8 @@ typedef struct 		s_piece
 	int 			**piece_map;/////piece_map_for_heat_map
 	int 			x_pos;/////position
 	int 			y_pos;/////position
-	int				leftmost;
-	int				rightmost;
+//	int				leftmost;
+//	int				rightmost;
 	int				down;
 	int				up;
 }					t_piece;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2-119/12/28 03:48:32 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/28 04:16:51 by sleonia          ###   ########.fr       */
+/*   Created: 2-119/12/28 03:48:32 by sleonia           #+#    #+#             *//*   Updated: 2020/01/07 17:11:07 by cyuriko          ###   ########.fr       */
+
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	**piece_map(int height, int width)
 	return (piece_map);
 }
 
-static bool	cut_and_transform_to_int_piece(t_piece *piece)
+/*static bool	cut_and_transform_to_int_piece(t_piece *piece)
 {
 	int		h;
 	int		w;
@@ -101,6 +101,27 @@ static bool	cut_and_transform_to_int_piece(t_piece *piece)
 		}
 	}
 	return (true);
+}*/
+
+
+static bool	cut_and_transform_to_int_piece(t_piece *piece)
+{
+		int		h;
+		int		w;
+
+		h = -1;
+		if (!(piece->piece_map = piece_map(piece->height, piece->width)))
+			return (false);
+		while (++h < piece->height)
+		{
+			w = -1;
+			while (++w < piece->width)
+			{
+				if (piece->piece[h][w] == '*')
+					piece->piece_map[h][w] = 1;
+			}
+		}
+		return (true);
 }
 
 bool		parse_piece(t_piece *piece)

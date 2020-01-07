@@ -1,0 +1,54 @@
+1 
+1 
+heatmap
+5 4 3 3 4 5 6 
+4 3 2 2 3 4 -2 
+3 2 1 1 2 3 4 
+2 1 -1 -1 1 2 3 
+max_heat 5
+crosscounter 0
+max_heat 4
+crosscounter 0
+max_heat 3
+crosscounter 0
+max_heat 3
+crosscounter 0
+max_heat 4
+crosscounter 0
+max_heat 5
+crosscounter 0
+max_heat 6
+crosscounter 1
+max_heat 4
+crosscounter 0
+max_heat 3
+crosscounter 0
+max_heat 2
+crosscounter 0
+max_heat 2
+crosscounter 0
+max_heat 3
+crosscounter 0
+max_heat 4
+crosscounter 0
+max_heat 4
+crosscounter 1
+max_heat 3
+crosscounter 0
+max_heat 2
+crosscounter 0
+max_heat 1
+SASI HUImax_heat 1
+SASI HUImax_heat 2
+crosscounter 0
+max_heat 3
+crosscounter 0
+max_heat 4
+crosscounter 0
+env->best_x 6
+env->best_y 0
+
+env->map->height 4
+env->map->width 7
+env->piece->height 2
+env->piece->width 1

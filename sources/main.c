@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/28 09:34:26 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/07 18:22:40 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ extern int fd;
 
 void	print_coords(int x, int y)
 {
-	// ft_putnbr_fd(x, 0);
-	// ft_putchar_fd(' ', 0);
-	// ft_putnbr_fd(y, 0);
-	// ft_putchar_fd('\n', 0);
+	 ft_putnbr_fd(y, 1);
+	 ft_putchar_fd(' ', 1);
+	 ft_putnbr_fd(x, 1);
+	 ft_putchar_fd('\n', 1);
 }
 
 int 	main()
@@ -40,16 +40,26 @@ int 	main()
 	read_map(env);
 	init_heatmap(env);
 	parse_piece(env->piece);
-	cropped_map(env->piece);
-	// for (size_t k = 0; k < env->piece->height; k++)
-	// {
-	// 	for (size_t i = 0; i < env->piece->width; i++)
-	// 	{
-	// 		ft_putnbr_fd(env->piece->piece_map[k][i], fd);
-	// 		// ft_putchar_fd(' ', fd);
-	// 	}		
-	// 	ft_putchar_fd('\n', fd);
-	// }
+//	cropped_map(env->piece);
+	for (size_t k = 0; k < env->piece->height; k++)
+	{
+		for (size_t i = 0; i < env->piece->width; i++)
+		{
+			ft_putnbr_fd(env->piece->piece_map[k][i], fd);
+			ft_putchar_fd(' ', fd);
+		}
+		ft_putchar_fd('\n', fd);
+	}
+	ft_putstr_fd("heatmap\n", fd);
+	 for (size_t k = 0; k < env->map->height; k++)
+	 {
+	 	for (size_t i = 0; i < env->map->width; i++)
+	 	{
+	 		ft_putnbr_fd(env->map->heatmap[k][i], fd);
+	 		 ft_putchar_fd(' ', fd);
+	 	}
+	 	ft_putchar_fd('\n', fd);
+	 }
 	env->best_x = -1;
 	env->best_y = -1;
 	if (try_it_out(env))
@@ -63,7 +73,13 @@ int 	main()
 // 	ft_putchar('\n');
 // }
 // 	}
-// 	ft_putchar_fd('\n', fd);
+	ft_putstr_fd("env->best_x ", fd);
+	ft_putnbr_fd(env->best_x, fd);
+	ft_putchar_fd('\n', fd);
+	ft_putstr_fd("env->best_y ", fd);
+	ft_putnbr_fd(env->best_y, fd);
+	ft_putchar_fd('\n', fd);
+ 	ft_putchar_fd('\n', fd);
 	ft_putstr_fd("env->map->height ", fd);
 	ft_putnbr_fd(env->map->height, fd);
 	ft_putchar_fd('\n', fd);
@@ -75,11 +91,11 @@ ft_putchar_fd('\n', fd);
 	ft_putchar_fd('\n', fd);
 	ft_putstr_fd("env->piece->width ", fd);
 	ft_putnbr_fd(env->piece->width, fd);
-ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(env->best_x, fd);
-	ft_putchar_fd(' ', fd);
-	ft_putnbr_fd(env->best_y, fd);
 	ft_putchar_fd('\n', fd);
+//	ft_putnbr_fd(env->best_x, fd);
+//	ft_putchar_fd(' ', fd);
+//	ft_putnbr_fd(env->best_y, fd);
+//	ft_putchar_fd('\n', fd);
 
 // 	ft_putstr_fd("leftmost ", fd);
 // 	ft_putnbr_fd(env->piece->leftmost, fd);
@@ -95,4 +111,4 @@ ft_putchar_fd('\n', fd);
 // 	while (1) ;
 // 	return (0);
 // }
-}		
+}

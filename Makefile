@@ -35,7 +35,7 @@ SRC_NAME =	free_things.c		\
 			parse_piece.c		\
 			ft_free.c			\
 			put_piece.c			\
-			cropped_map.c		\
+#			cropped_map.c		\
 
 
 OBJ_NAME = $(SRC_NAME:.c=.o)

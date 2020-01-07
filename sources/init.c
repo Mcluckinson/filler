@@ -18,8 +18,8 @@ static t_piece		*init_piece(void)
 
 	if (!(piece = (t_piece *)ft_memalloc(sizeof(t_piece))))
 		return (NULL);
-	piece->leftmost = 2147483647;
-	piece->rightmost = -1;
+//	piece->leftmost = 2147483647;
+//	piece->rightmost = -1;
 	piece->up = -1;
 	piece->down = -1;
 	return (piece);

@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/cyuriko/filler/libft 
+C_INCLUDES = -I/Users/cyuriko/filler/. -I/Users/cyuriko/filler/includes -I/Users/cyuriko/filler/libft/includes 
 

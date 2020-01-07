@@ -44,7 +44,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cyuriko/filler/libft"/>
+					<Add directory="/Users/cyuriko/filler/."/>
+					<Add directory="/Users/cyuriko/filler/includes"/>
+					<Add directory="/Users/cyuriko/filler/libft/includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -66,7 +68,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/cyuriko/filler/libft"/>
+					<Add directory="/Users/cyuriko/filler/."/>
+					<Add directory="/Users/cyuriko/filler/includes"/>
+					<Add directory="/Users/cyuriko/filler/libft/includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -82,220 +86,337 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/cyuriko/filler/filler.h">
-			<Option target="filler"/>
-		</Unit>
 		<Unit filename="/Users/cyuriko/filler/free_things.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_atoi.c">
+		<Unit filename="/Users/cyuriko/filler/includes/filler.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_bzero.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_error.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_delarr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_get_next_line.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_isalnum.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_io.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_isalpha.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_memory.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_isascii.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_my_string.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_isdigit.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_sort.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_isprint.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_string.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_itoa.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/ft_vector.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_listlast.c">
+		<Unit filename="/Users/cyuriko/filler/libft/includes/libft.h">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstadd.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/error/char_error.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstcount.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/error/ft_exit.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstdel.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/error/int_error.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstdelcont.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/error/malloc_error.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstdelone.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/error/void_error.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstfind.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putchar.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstiter.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putchar_fd.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstmap.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putendl.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_lstnew.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putendl_fd.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memalloc.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putnbr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memccpy.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putnbr_fd.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memchr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putstr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memcmp.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/ft_putstr_fd.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memcpy.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/print_arr_str.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memdel.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/putchar_color.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memmove.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/io/putstr_color.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_memset.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_bzero.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_power.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_destroy_int_arr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putchar.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_destroy_string_arr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putchar_fd.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memalloc.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putendl.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memccpy.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putendl_fd.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memchr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putnbr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memcmp.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putnbr_fd.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memcpy.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putstr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memdel.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_putstr_fd.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memmove.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strcat.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_memset.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strchr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/memory/ft_safe_malloc.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strclr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/sort/my_bubble_sort.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strcmp.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/sort/my_quick_sort.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strcpy.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_atof.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strdel.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_atoi.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strdup.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_atoi_base.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strequ.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_find_symb_in_str_arr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_striter.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_getnbr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_striteri.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_isalnum.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strjoin.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_isalpha.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strlcat.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_isascii.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strlen.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_isdigit.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strmap.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_isnumber.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strmapi.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_isprint.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strncat.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_itoa.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strncmp.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_len_arr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strncpy.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strcat.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strnequ.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strchr.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strnew.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strchrdup.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strnstr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strcmp.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strrchr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strcpy.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strsplit.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strdel.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strstr.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strdup.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strsub.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strequ.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_strtrim.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_striter.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_swap.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_striteri.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_tolower.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strjoin.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/ft_toupper.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strjoin_free.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/get_next_line.c">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strlcat.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/get_next_line.h">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strlen.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/filler/libft/libft.h">
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strlow.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strmap.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strmapi.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strncat.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strncmp.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strncpy.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strnequ.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strnew.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strnstr.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strrchr.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strrev.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strsplit.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strstr.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strsub.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strtrim.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_strup.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_tolower.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/ft_toupper.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/get_next_line.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/read_big_file.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/string/read_file.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_distance.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_dot.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_length.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_multiplication.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_multiplication_num.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_subtract.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/libft/source/vector/ft_vec_sum.c">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/cyuriko/filler/main.c">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/cyuriko/filler/service.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/count_heatmap.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/cropped_map.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/free_things.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/ft_free.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/ft_get_line.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/init.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/main.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/parse_piece.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/parse_player.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/put_piece.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/read_map.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/skip_line.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/filler/sources/work_with_heatmap.c">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/cyuriko/filler/transform_to_heat.c">
