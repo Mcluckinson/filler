@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 17:48:50 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 02:26:59 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 02:34:30 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ int				**init_heat_map(int height, int width)
 		}
 	}
 	return (heat_map);
+}
+
+char			**init_map(int height)
+{
+	char	**map;
+
+	if (!(map = ft_memalloc(sizeof(char*) * height)))
+		return (NULL);
+	return (map);
 }
 
 t_plateau		*init_plateau(void)

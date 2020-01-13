@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/14 02:26:06 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 02:45:31 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	open_file()
 	fd = open("sleonia.txt", O_WRONLY);
 }
 
-void	print_in_file(char c, char *str, int value)
+void	print_in_file(char c, char *str, char **map, int **heat_map, int value)
 {
 	if (c)
 	{
@@ -33,6 +33,19 @@ void	print_in_file(char c, char *str, int value)
 	{
 		ft_putstr_fd(str, fd);
 		ft_putchar_fd('\n', fd);
+	}
+	if (map)
+	{
+		int i = -1;
+		while (map[++i])
+		{
+			ft_putstr_fd(map[i], fd);
+			ft_putchar_fd('\n', fd);
+		}
+	}
+	if (heat_map)
+	{
+		
 	}
 	if (value != -1)
 	{
@@ -60,25 +73,26 @@ int 	main()
 			return (int_error(ERROR_INPUT));
 		if (!parse_plateau_size(env))
 			return (int_error(ERROR_INPUT));
-		if (!(env->plateau->heat_map = init_heat_map(env->plateau->height, env->plateau->width)))
+		// if (!(env->plateau->heat_map = init_heat_map(env->plateau->height, env->plateau->width)))
+			// return (int_error(ERROR_INPUT));
+		if (!(parse_plateau(env)))
 			return (int_error(ERROR_INPUT));
-
-		char	*line;
-		if (get_next_line(0, &line) != 1)
-			return (false);
-		print_in_file('\0', line, -1);
-		if (get_next_line(0, &line) != 1)
-			return (false);
-		print_in_file('\0', line, -1);
-		if (get_next_line(0, &line) != 1)
-			return (false);
-		print_in_file('\0', line, -1);
-		if (get_next_line(0, &line) != 1)
-			return (false);
-		print_in_file('\0', line, -1);
-		if (get_next_line(0, &line) != 1)
-			return (false);
-		print_in_file('\0', line, -1);
+		// char	*line;
+		// if (get_next_line(0, &line) != 1)
+		// 	return (false);
+		// print_in_file('\0', line, -1);
+		// if (get_next_line(0, &line) != 1)
+		// 	return (false);
+		// print_in_file('\0', line, -1);
+		// if (get_next_line(0, &line) != 1)
+		// 	return (false);
+		// print_in_file('\0', line, -1);
+		// if (get_next_line(0, &line) != 1)
+		// 	return (false);
+		// print_in_file('\0', line, -1);
+		// if (get_next_line(0, &line) != 1)
+		// 	return (false);
+		// print_in_file('\0', line, -1);
 		break ;
 	}
 	return (0);
