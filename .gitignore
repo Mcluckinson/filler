@@ -1,0 +1,9 @@
+objects/*
+sleonia.filler
+filler.trace
+*.dSYM/
+libft/objects/*
+libft/libft.a
+.DS_Store
+.vscode
+.vscode/*

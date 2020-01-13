@@ -1,6 +1,18 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
+#    Updated: 2020/01/14 01:31:09 by sleonia          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY: all, $(NAME), norm, clean, fclean, re
 
-NAME = cyuriko.filler
+NAME = sleonia.filler
 
 FRAMEDIR = /Users/$(USER)/Library/Frameworks
 
@@ -23,20 +35,10 @@ FRAME = 	-F Frameworks/ -framework SDL2 -framework SDL2_image 		\
 
 FLAGS = 	-Wall -Werror -Wextra -Ofast -g
 
-SRC_NAME =	free_things.c		\
+SRC_NAME =	init.c				\
 			main.c				\
-			init.c				\
+			utilits.c			\
 			parse_player.c		\
-			ft_get_line.c		\
-			count_heatmap.c		\
-			skip_line.c			\
-			work_with_heatmap.c	\
-			read_map.c			\
-			parse_piece.c		\
-			ft_free.c			\
-			put_piece.c			\
-			cropped_map.c		\
-
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

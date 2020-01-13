@@ -1,13 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   define_value.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/28 05:19:56 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/28 05:20:02 by sleonia          ###   ########.fr       */
+/*   Created: 2019/12/25 02:33:42 by sleonia           #+#    #+#             */
+/*   Updated: 2020/01/14 01:09:51 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#ifndef DEFINE_VALUE_H
+# define DEFINE_VALUE_H
+
+# include "filler.h"
+
+# define PLAYER_1				"$$$ exec p1 : [./cyuriko.filler]"
+# define PLAYER_2				"$$$ exec p2 : [./cyuriko.filler]"
+# define PLAYER_1_SYMB_BIG		'X'
+# define PLAYER_2_SYMB_BIG		'O'
+
+#endif

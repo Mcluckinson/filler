@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_line.c                                      :+:      :+:    :+:   */
+/*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/27 21:03:59 by sleonia           #+#    #+#             */
-/*   Updated: 2019/12/27 21:04:09 by sleonia          ###   ########.fr       */
+/*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
+/*   Updated: 2020/01/14 01:29:51 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#ifndef FUNCTIONS_H
+# define FUNCTIONS_H
 
-char	*ft_get_line(void)
-{
-	char	*line;
+# include "filler.h"
 
-	if (!get_next_line(0, &line))
-		return (NULL);
-	return (line);
-}
+/*
+**	init.c
+*/
+
+/*
+**	main.c
+*/
+
+/*
+**	parse_player.c
+*/
+bool	parse_player(t_env *env);
+
+/*
+**	utilits.c
+*/
+void	print_coords(int x, int y);
+void	ft_free(int free_code, t_env *env);
+
+#endif

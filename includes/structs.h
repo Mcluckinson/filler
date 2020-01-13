@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   service.c                                          :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/25 16:41:43 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/12/26 19:08:05 by cyuriko          ###   ########.fr       */
+/*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
+/*   Updated: 2020/01/14 01:20:21 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
-void	write_coords(int x, int y)
+# include "filler.h"
+
+
+
+typedef struct 		s_env
 {
-	ft_putnbr(x);
-	ft_putchar(' ');
-	ft_putnbr(y);
-	ft_putchar('\n');
-}
+	
+}					t_env;
 
+#endif
