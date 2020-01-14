@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 06:23:09 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:08:12 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 # define FUNCTIONS_H
 
 # include "filler.h"
-
-/*
-**	math_heatmap.c
-*/
-bool		math_heatmap(t_env *env);
 
 /*
 **	init.c
@@ -31,7 +26,17 @@ t_env		*init_env(void);
 /*
 **	main.c
 */
-void		print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, int value);
+void		print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, int value1, int value2);
+
+/*
+**	math_best_pos.c
+*/
+void		math_best_pos(t_env *env);
+
+/*
+**	math_heatmap.c
+*/
+bool		math_heatmap(t_env *env);
 
 /*
 **	parse_piece.c

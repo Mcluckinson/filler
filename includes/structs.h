@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 06:03:26 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 07:06:30 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct 		s_plateau
 
 typedef struct		s_env
 {
+	int				x;
+	int				y;
 	char			my_symb;
 	char			enemy_symb;
 	t_plateau		*plateau;

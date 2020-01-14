@@ -14,21 +14,21 @@
 
 static int	math_manhattan_dist(int x, int y, t_plateau *plateau)
 {
-	int		x_counter;
-	int		y_counter;
+	int		h;
+	int		w;
 	int		dist;
 	int		min_distanse;
 
-	min_distanse = 2147483647;
-	x_counter = -1;
-	while (++x_counter < plateau->height)
+	min_distanse = INT32_MAX;
+	h = -1;
+	while (++h < plateau->height)
 	{
-		y_counter = -1;
-		while (++y_counter < plateau->width)
+		w = -1;
+		while (++w < plateau->width)
 		{
-			if (plateau->heatmap[x_counter][y_counter] == ENEMY_HEAT)
+			if (plateau->heatmap[h][w] == ENEMY_HEAT)
 			{
-				dist = abs(x_counter - x) + abs(y_counter - y);
+				dist = abs(h - x) + abs(w - y);
 				if (dist < min_distanse)
 					min_distanse = dist;
 			}
@@ -61,25 +61,26 @@ static void	math_players_pos(t_env *env)
 	int		w;
 
 	h = -1;
-	w = -1;
 	while (++h < env->plateau->height)
 	{
+		w = -1;
 		while (++w < env->plateau->width)
 		{
 			if (env->plateau->map[h][w] == env->my_symb
-				|| env->plateau->map[h][w] == env->my_symb + 40)
+				|| env->plateau->map[h][w] == env->my_symb + 32)
 				env->plateau->heatmap[h][w] = MY_HEAT;
 			else if (env->plateau->map[h][w] == env->enemy_symb
-				|| env->plateau->map[h][w] == env->enemy_symb + 40)
+				|| env->plateau->map[h][w] == env->enemy_symb + 32)
 				env->plateau->heatmap[h][w] = ENEMY_HEAT;
 		}
-
 	}
 }
 
 bool		math_heatmap(t_env *env)
 {
 	math_players_pos(env);
+	// print_in_file('\0', NULL, env->plateau->map, NULL, env->plateau->height, env->plateau->width, -1);
+	// print_in_file('\0', NULL, NULL, env->plateau->heatmap, env->plateau->height, env->plateau->width, -1);
 	count_heatmap(env->plateau);
 	return (true);
 }

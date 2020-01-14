@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/14 06:27:13 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:12:32 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	open_file()
 	fd = open("sleonia.txt", O_WRONLY);
 }
 
-void	print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, int value)
+void	print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, int value1, int value2)
 {
 	if (c)
 	{
@@ -56,9 +56,14 @@ void	print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, i
 		}
 		ft_putchar_fd('\n', fd);
 	}
-	if (value != -1)
+	if (value1 != INT32_MAX)
 	{
-		ft_putnbr_fd(value, fd);
+		ft_putnbr_fd(value1, fd);
+		ft_putchar_fd('\n', fd);
+	}
+	if (value2 != INT32_MAX)
+	{
+		ft_putnbr_fd(value2, fd);
 		ft_putchar_fd('\n', fd);
 	}
 }
@@ -84,14 +89,14 @@ int 	main()
 			return (ft_free(env));
 		if (!parse_piece(env))
 			return (ft_free(env));
-		print_in_file('\0', NULL, NULL, env->plateau->heatmap, env->plateau->height, env->plateau->width, -1);
 		math_heatmap(env);
-		print_in_file('\0', NULL, NULL, env->plateau->heatmap, env->plateau->height, env->plateau->width, -1);
-
+		math_best_pos(env);
+		print_coords(env->x, env->y);
+		print_in_file('\0', NULL, NULL, NULL, 0, 0, env->x, env->y);
+		// ft_free(env);
 		// char	*line;
 		// if (get_next_line(0, &line) != 1)
 		// 	return (false);
-		// print_in_file('\0', line, NULL, NULL, -1);
 		break ;
 	}
 	return (0);

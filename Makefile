@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/14 06:23:13 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/14 07:04:26 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,10 @@ FRAME = 	-F Frameworks/ -framework SDL2 -framework SDL2_image 		\
 
 FLAGS = 	-Wall -Werror -Wextra -Ofast -g
 
-SRC_NAME =	math_heatmap.c		\
-			init.c					\
+SRC_NAME =	init.c					\
 			main.c					\
+			math_best_pos.c			\
+			math_heatmap.c			\
 			utilits.c				\
 			parse_piece.c			\
 			parse_plateau.c			\
