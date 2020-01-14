@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/14 08:12:32 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:37:46 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,8 @@ int 	main()
 		math_heatmap(env);
 		math_best_pos(env);
 		print_coords(env->x, env->y);
-		print_in_file('\0', NULL, NULL, NULL, 0, 0, env->x, env->y);
+		// print_in_file('\0', NULL, NULL, NULL, 0, 0, env->x, env->y);
 		// ft_free(env);
-		// char	*line;
-		// if (get_next_line(0, &line) != 1)
-		// 	return (false);
-		break ;
 	}
 	return (0);
 }
