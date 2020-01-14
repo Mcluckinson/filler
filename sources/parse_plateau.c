@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:59:32 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 09:03:28 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 10:10:40 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,7 @@ bool		parse_plateau(t_env *env)
 		return (false);
 	ft_strdel(&line);
 	if (!(env->plateau->map = init_map(env->plateau->height + 1)))
-	{
-		ft_strdel(&line);
 		return (false);
-	}
 	if (!read_plateau_map(env))
 		return (false);
 	return (true);

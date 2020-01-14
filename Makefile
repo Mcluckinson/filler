@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/14 09:44:21 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/14 10:13:42 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_PATH = ./sources/
 OBJ_PATH = ./objects/
 INC_PATH = ./includes/
 LIB_PATH = ./libft/
+VIZ_PATH = ./visualization/
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
@@ -64,6 +65,9 @@ $(FRAMEDIR):
 		@rm -rf $(FRAMEDIR)/*
 
 lib_refresh:
+	@make -C $(LIB_PATH)
+
+visualization_refresh:
 	@make -C $(LIB_PATH)
 
 clean:

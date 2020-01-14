@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 09:24:12 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 10:24:29 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ bool		parse_player(t_env *env);
 */
 void		print_coords(int x, int y);
 void		reset_coords(int *x, int *y);
-int			ft_free(int free_code, t_env *env);
+int			ft_free(int code, t_env *env);
 
 #endif
