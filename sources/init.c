@@ -6,35 +6,35 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 17:48:50 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 04:56:21 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 06:03:26 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int				**init_heat_map(int height, int width)
+int				**init_heatmap(int height, int width)
 {
-	int			**heat_map;
+	int			**heatmap;
 	int			i;
 
 	i = 0;
-	if (!(heat_map = (int **)ft_memalloc(sizeof(int *) * height)))
+	if (!(heatmap = (int **)ft_memalloc(sizeof(int *) * height)))
 		return (NULL);
 	i = -1;
 	while (++i < height)
 	{
-		if (!(heat_map[i] = (int *)ft_memalloc(sizeof(int) * width)))
+		if (!(heatmap[i] = (int *)ft_memalloc(sizeof(int) * width)))
 		{
-			ft_destroy_int_arr(heat_map, i);
+			ft_destroy_int_arr(heatmap, i);
 			return (NULL);
 		}
 	}
-	return (heat_map);
+	return (heatmap);
 }
 
 char			**init_map(int height)
 {
-	char	**map;
+	char		**map;
 
 	if (!(map = (char **)ft_memalloc(sizeof(char *) * height)))
 		return (NULL);

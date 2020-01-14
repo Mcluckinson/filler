@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/14 02:52:12 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/14 06:23:13 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,12 +35,13 @@ FRAME = 	-F Frameworks/ -framework SDL2 -framework SDL2_image 		\
 
 FLAGS = 	-Wall -Werror -Wextra -Ofast -g
 
-SRC_NAME =	init.c				\
-			main.c				\
-			utilits.c			\
-			parse_piece.c		\
-			parse_plateau.c		\
-			parse_player.c		\
+SRC_NAME =	math_heatmap.c		\
+			init.c					\
+			main.c					\
+			utilits.c				\
+			parse_piece.c			\
+			parse_plateau.c			\
+			parse_player.c			\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

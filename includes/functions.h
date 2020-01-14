@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 02:57:47 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 06:23:09 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 # include "filler.h"
 
 /*
+**	math_heatmap.c
+*/
+bool		math_heatmap(t_env *env);
+
+/*
 **	init.c
 */
-int			**init_heat_map(int height, int width);
+int			**init_heatmap(int height, int width);
 char		**init_map(int height);
 bool		init_sub_struct(t_env *env);
 t_env		*init_env(void);
@@ -26,7 +31,7 @@ t_env		*init_env(void);
 /*
 **	main.c
 */
-void		print_in_file(char c, char *str, char **map, int **heat_map, int value);
+void		print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, int value);
 
 /*
 **	parse_piece.c
@@ -47,6 +52,6 @@ bool		parse_player(t_env *env);
 **	utilits.c
 */
 void		print_coords(int x, int y);
-void		ft_free(int code, t_env *env);
+int			ft_free(t_env *env);
 
 #endif

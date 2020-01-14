@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:59:32 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 04:57:12 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 06:01:32 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ bool		parse_plateau(t_env *env)
 		ft_strdel(&line);
 		ft_destroy_string_arr(split);
 	}
-	// print_in_file('\0', NULL, env->plateau->map, NULL, -1);
+	// print_in_file('\0', "env->plateau->map", env->plateau->map, NULL, -1);
 	return (true);
 }

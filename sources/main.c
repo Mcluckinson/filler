@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/14 04:42:02 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 06:27:13 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	open_file()
 	fd = open("sleonia.txt", O_WRONLY);
 }
 
-void	print_in_file(char c, char *str, char **map, int **heat_map, int value)
+void	print_in_file(char c, char *str, char **map, int **heatmap, int h, int w, int value)
 {
 	if (c)
 	{
@@ -43,9 +43,18 @@ void	print_in_file(char c, char *str, char **map, int **heat_map, int value)
 			ft_putchar_fd('\n', fd);
 		}
 	}
-	if (heat_map)
+	if (heatmap)
 	{
-		
+		for (size_t i = 0; i < h; i++)
+		{
+			for (size_t k = 0; k < w; k++)
+			{
+				ft_putnbr_fd(heatmap[i][k], fd);
+				ft_putchar_fd(' ', fd);
+			}
+			ft_putchar_fd('\n', fd);
+		}
+		ft_putchar_fd('\n', fd);
 	}
 	if (value != -1)
 	{
@@ -61,22 +70,23 @@ int 	main()
 	open_file();
 	//
 	if (!(env = init_env()))
-		return (int_error(ERROR_MALLOC));
+		return (1);
 	if (!parse_player(env))
-	{
-		ft_free(Env, env);
-		return (int_error(ERROR_INPUT));
-	}
+		return (ft_free(env));
 	while (true)
 	{
 		if (!init_sub_struct(env))
-			return (int_error(ERROR_INPUT));
+			return (ft_free(env));
 		if (!parse_plateau(env))
 			return (int_error(ERROR_INPUT));
-		// if (!(env->plateau->heat_map = init_heat_map(env->plateau->height, env->plateau->width)))
-			// return (int_error(ERROR_INPUT));
+		if (!(env->plateau->heatmap = init_heatmap(env->plateau->height,
+													env->plateau->width)))
+			return (ft_free(env));
 		if (!parse_piece(env))
-			return (int_error(ERROR_INPUT));
+			return (ft_free(env));
+		print_in_file('\0', NULL, NULL, env->plateau->heatmap, env->plateau->height, env->plateau->width, -1);
+		math_heatmap(env);
+		print_in_file('\0', NULL, NULL, env->plateau->heatmap, env->plateau->height, env->plateau->width, -1);
 
 		// char	*line;
 		// if (get_next_line(0, &line) != 1)
@@ -86,6 +96,3 @@ int 	main()
 	}
 	return (0);
 }
-	// if (get_next_line(0, &line) != 1)
-		// return (false);
-	// print_in_file('\0', line, -1);
