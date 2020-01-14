@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 08:54:35 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 09:32:24 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 
 # include "filler.h"
 
-typedef struct 		s_math_sum
+typedef enum		e_free
+{
+	Free_env,
+	Free_piece,
+	Free_plateau,
+	Free_sub_struct,
+	Free_all
+}					t_free;
+
+typedef struct		s_math_sum
 {
 	int				x;
 	int				y;
@@ -23,13 +32,11 @@ typedef struct 		s_math_sum
 	int				count;
 }					t_math_sum;
 
-
 typedef struct		s_piece
 {
 	int				height;
 	int				width;
 	char			**map;
-	int				**heatmap;
 }					t_piece;
 
 typedef struct		s_plateau
