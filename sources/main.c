@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/14 02:45:31 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 04:42:02 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,30 +69,19 @@ int 	main()
 	}
 	while (true)
 	{
-		if (!(env->plateau = init_plateau()))
+		if (!init_sub_struct(env))
 			return (int_error(ERROR_INPUT));
-		if (!parse_plateau_size(env))
+		if (!parse_plateau(env))
 			return (int_error(ERROR_INPUT));
 		// if (!(env->plateau->heat_map = init_heat_map(env->plateau->height, env->plateau->width)))
 			// return (int_error(ERROR_INPUT));
-		if (!(parse_plateau(env)))
+		if (!parse_piece(env))
 			return (int_error(ERROR_INPUT));
+
 		// char	*line;
 		// if (get_next_line(0, &line) != 1)
 		// 	return (false);
-		// print_in_file('\0', line, -1);
-		// if (get_next_line(0, &line) != 1)
-		// 	return (false);
-		// print_in_file('\0', line, -1);
-		// if (get_next_line(0, &line) != 1)
-		// 	return (false);
-		// print_in_file('\0', line, -1);
-		// if (get_next_line(0, &line) != 1)
-		// 	return (false);
-		// print_in_file('\0', line, -1);
-		// if (get_next_line(0, &line) != 1)
-		// 	return (false);
-		// print_in_file('\0', line, -1);
+		// print_in_file('\0', line, NULL, NULL, -1);
 		break ;
 	}
 	return (0);

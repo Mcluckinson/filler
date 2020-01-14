@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 17:48:50 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 02:34:30 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 04:56:21 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,21 @@ char			**init_map(int height)
 {
 	char	**map;
 
-	if (!(map = ft_memalloc(sizeof(char*) * height)))
+	if (!(map = (char **)ft_memalloc(sizeof(char *) * height)))
 		return (NULL);
 	return (map);
 }
 
-t_plateau		*init_plateau(void)
+bool			init_sub_struct(t_env *env)
 {
-	t_plateau	*plateau;
-
-	if (!(plateau = (t_plateau *)ft_memalloc(sizeof(t_plateau))))
-		return (NULL);
-	return (plateau);
+	if (!(env->plateau = (t_plateau *)ft_memalloc(sizeof(t_plateau))))
+		return (false);
+	if (!(env->piece = (t_piece *)ft_memalloc(sizeof(t_piece))))
+	{
+		ft_memdel((void *)&env->plateau);
+		return (false);
+	}
+	return (true);
 }
 
 t_env			*init_env(void)

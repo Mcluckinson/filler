@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 02:24:25 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 02:57:19 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ typedef enum		e_free_code
 	All
 }					t_free_code;
 
+typedef struct 		s_piece
+{
+	int 			height;
+	int 			width;
+	char			**map;
+	int 			**heat_map;
+}					t_piece;
+
 typedef struct 		s_plateau
 {
 	int 			height;
@@ -35,6 +43,7 @@ typedef struct		s_env
 	char			my_symb;
 	char			enemy_symb;
 	t_plateau		*plateau;
+	t_piece			*piece;
 }					t_env;
 
 #endif

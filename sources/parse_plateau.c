@@ -6,11 +6,33 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:59:32 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 02:47:53 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 04:57:12 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
+
+static bool	parse_plateau_size(t_env *env)
+{
+	char	*line;
+	char	**split;
+
+	if (get_next_line(0, &line) != 1)
+		return (false);
+	if (!(split = ft_strsplit(line, ' ')))
+	{
+		ft_strdel(&line);
+		return (false);	
+	}
+	env->plateau->height = ft_atoi(split[1]);
+	env->plateau->width = ft_atoi(split[2]);
+	// print_in_file('\0', line, NULL, NULL, -1);
+	// print_in_file('\0', NULL, NULL, NULL, env->plateau->height);
+	// print_in_file('\0', NULL, NULL, NULL, env->plateau->width);
+	ft_strdel(&line);
+	ft_destroy_string_arr(split);
+	return (true);
+}
 
 bool		parse_plateau(t_env *env)
 {
@@ -18,11 +40,13 @@ bool		parse_plateau(t_env *env)
 	char	*line;
 	char	**split;
 
+	if (!parse_plateau_size(env))
+		return (false);
 	if (get_next_line(0, &line) != 1)
 		return (false);
 	ft_strdel(&line);
 	i = -1;
-	if (!(env->plateau->map = init_map(env->plateau->height)))
+	if (!(env->plateau->map = init_map(env->plateau->height + 1)))
 	{
 		ft_strdel(&line);
 		return (false);
@@ -47,27 +71,5 @@ bool		parse_plateau(t_env *env)
 		ft_destroy_string_arr(split);
 	}
 	// print_in_file('\0', NULL, env->plateau->map, NULL, -1);
-	return (true);
-}
-
-bool		parse_plateau_size(t_env *env)
-{
-	char	*line;
-	char	**split;
-
-	if (get_next_line(0, &line) != 1)
-		return (false);
-	if (!(split = ft_strsplit(line, ' ')))
-	{
-		ft_strdel(&line);
-		return (false);	
-	}
-	env->plateau->height = ft_atoi(split[1]);
-	env->plateau->width = ft_atoi(split[2]);
-	// print_in_file('\0', line, NULL, NULL, -1);
-	// print_in_file('\0', NULL, NULL, NULL, env->plateau->width);
-	// print_in_file('\0', NULL, NULL, NULL, env->plateau->height);
-	ft_strdel(&line);
-	ft_destroy_string_arr(split);
 	return (true);
 }
