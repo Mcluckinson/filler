@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 17:48:50 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 06:03:26 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:48:27 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,5 @@ t_env			*init_env(void)
 
 	if (!(env = (t_env *)ft_memalloc(sizeof(t_env))))
 		return (NULL);
-	
 	return (env);
 }

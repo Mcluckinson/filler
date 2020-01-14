@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:21:04 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 08:38:09 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:42:43 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ void	print_coords(int x, int y)
 	ft_putchar(' ');
 	ft_putnbr(x);
 	ft_putchar('\n');
-
-	// ft_putnbr_fd(y, 0);
-	// ft_putchar_fd(' ', 0);
-	// ft_putnbr_fd(x, 0);
-	// ft_putchar_fd('\n', 0);
 }
 
 int		ft_free(t_env *env)

@@ -6,48 +6,45 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 07:03:09 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 08:19:54 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/14 08:55:08 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static int	math_sum(int x, int y, t_env *env)
+static int		math_sum(int x, int y, t_plateau *plateau, t_piece *piece)
 {
-	int		x_piece;
-	int		y_piece;
-	int		sum;
-	int		count;
+	t_math_sum	math;
 
-	y_piece = -1;
-	sum = 0;
-	count = 0;
-	while (++y_piece < env->piece->height)
+	math.y = -1;
+	math.sum = 0;
+	math.count = 0;
+	while (++math.y < piece->height)
 	{
-		x_piece = -1;
-		while (++x_piece < env->piece->width)
+		math.x = -1;
+		while (++math.x < piece->width)
 		{
-			if (env->piece->map[y_piece][x_piece] == '*')
+			if (piece->map[math.y][math.x] == '*')
 			{
-				if ((y + y_piece) < 0 || (y + y_piece) >= env->plateau->height
-					|| (x + x_piece) < 0 || (x + x_piece) >= env->plateau->width
-					|| env->plateau->heatmap[y + y_piece][x + x_piece] == ENEMY_HEAT)
+				if ((y + math.y) < 0 || (y + math.y) >= plateau->height
+					|| (x + math.x) < 0 || (x + math.x) >= plateau->width
+					|| plateau->heatmap[y + math.y][x + math.x] == ENEMY_HEAT)
 					return (-1);
-				if (env->plateau->heatmap[y + y_piece][x + x_piece] == MY_HEAT)
-					count++;
-				sum += env->plateau->heatmap[y + y_piece][x + x_piece];
+				if (plateau->heatmap[y + math.y][x + math.x] == MY_HEAT)
+					math.count++;
+				math.sum += plateau->heatmap[y + math.y][x + math.x];
 			}
 		}
 	}
-	return ((count == 1) ? sum : -1);
+	return ((math.count == 1) ? math.sum : -1);
 }
 
-void		math_best_pos(t_env *env)
+void			math_best_pos(t_env *env)
 {
-	int		x;
-	int		y;
-	int		sum;
-	int		min_sum;
+	int			x;
+	int			y;
+	int			sum;
+	int			min_sum;
 
 	min_sum = INT32_MAX;
 	y = -(env->piece->height) - 1;
@@ -56,7 +53,7 @@ void		math_best_pos(t_env *env)
 		x = -(env->piece->width) - 1;
 		while (++x < env->piece->width + env->plateau->width)
 		{
-			sum = math_sum(x, y, env);
+			sum = math_sum(x, y, env->plateau, env->piece);
 			if (sum != -1 && sum < min_sum)
 			{
 				env->x = x;

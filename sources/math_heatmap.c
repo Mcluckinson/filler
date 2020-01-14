@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math_heatmap.c                                :+:      :+:    :+:   */
+/*   math_heatmap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 06:04:57 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 06:22:41 by sleonia          ###   ########.fr       */
+/*   Created: 2020/01/14 08:47:04 by sleonia           #+#    #+#             */
+/*   Updated: 2020/01/14 08:47:56 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static void	count_heatmap(t_plateau *plateau)
 	}
 }
 
-
 static void	math_players_pos(t_env *env)
 {
 	int		h;
@@ -79,8 +78,6 @@ static void	math_players_pos(t_env *env)
 bool		math_heatmap(t_env *env)
 {
 	math_players_pos(env);
-	// print_in_file('\0', NULL, env->plateau->map, NULL, env->plateau->height, env->plateau->width, -1);
-	// print_in_file('\0', NULL, NULL, env->plateau->heatmap, env->plateau->height, env->plateau->width, -1);
 	count_heatmap(env->plateau);
 	return (true);
 }
