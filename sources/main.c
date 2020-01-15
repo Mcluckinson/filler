@@ -6,13 +6,13 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/14 10:22:05 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 00:02:49 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int			main(int ac, char **av)
+int			main(void)
 {
 	t_env	*env;
 
@@ -20,10 +20,10 @@ int			main(int ac, char **av)
 		return (1);
 	if (!parse_player(env))
 		return (ft_free(Free_env, env));
+	if (!init_sub_struct(env))
+		return (ft_free(Free_env, env));
 	while (true)
 	{
-		if (!init_sub_struct(env))
-			return (ft_free(Free_env, env));
 		if (!parse_plateau(env))
 			return (ft_free(Free_all, env));
 		if (!(env->plateau->heatmap = init_heatmap(env->plateau->height,
@@ -37,6 +37,7 @@ int			main(int ac, char **av)
 		reset_coords(&env->x, &env->y);
 		ft_free(Free_sub_struct, env);
 	}
-	ft_free(Free_env, env);
 	return (0);
 }
+// rm ./sleonia.filler; clear ; make ; ./resources/filler_vm -p1 resources/players/grati.filler -p2 ./sleonia.filler -f resources/maps/map01
+// rm ./sleonia.filler; clear ; make ; ./resources/filler_vm -p1 ./sleonia.filler -p2 resources/players/grati.filler -f resources/maps/map01

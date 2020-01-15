@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/14 10:13:42 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/15 21:49:08 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC_PATH)filler.h
 	@mkdir -p $(OBJ_PATH)
 	@mkdir -p $(OBJ_PATH)$(GUI_PATH)
 	@echo "\033[31m"
-	@gcc $(INC) $(INC_SDL) -o $@ -c $<
+	@gcc $(FLAGS) $(INC) $(INC_SDL) -o $@ -c $<
 	@echo "\033[0m"
 
 $(FRAMEDIR):

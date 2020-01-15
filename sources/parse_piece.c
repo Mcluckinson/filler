@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 02:52:45 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 09:49:39 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/15 21:50:11 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,6 @@ static bool		read_piece(t_env *env)
 
 bool			parse_piece(t_env *env)
 {
-	int		i;
-	char	*line;
-	char	**split;
-
 	if (!parse_piece_size(env))
 		return (false);
 	if (!read_piece(env))

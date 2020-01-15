@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 10:24:29 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/15 21:49:43 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_env		*init_env(void);
 /*
 **	main.c
 */
-int			main(int ac, char **av);
+int			main(void);
 
 /*
 **	math_best_pos.c
