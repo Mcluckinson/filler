@@ -8,3 +8,5 @@ libft/libft.a
 .vscode
 .vscode/*
 sleonia.txt
+./visualization/vs
+./visualization/objects
