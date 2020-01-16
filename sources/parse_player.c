@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:20:08 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 09:44:55 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 16:24:45 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ bool		parse_player(t_env *env)
 	char	*line;
 
 	if (get_next_line(0, &line) != 1)
+	{
+		ft_memdel((void *)&env);
 		return (false);
+	}
 	if (ft_strcmp(line, PLAYER_1) == 0)
 	{
 		env->my_symb = PLAYER_2_BIG;
@@ -29,7 +32,10 @@ bool		parse_player(t_env *env)
 		env->enemy_symb = PLAYER_2_BIG;
 	}
 	else
+	{
+		ft_memdel((void *)&env);
 		return (false);
+	}
 	ft_strdel(&line);
 	return (true);
 }

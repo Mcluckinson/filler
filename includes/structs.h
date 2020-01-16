@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 09:32:24 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 16:27:11 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 typedef enum		e_free
 {
-	Free_env,
-	Free_piece,
-	Free_plateau,
-	Free_sub_struct,
-	Free_all
+	Fail,
+	End_turn,
+	Endgame,
+	Fail_parse_pl,
+	Fail_parse_ps
 }					t_free;
 
 typedef struct		s_math_sum

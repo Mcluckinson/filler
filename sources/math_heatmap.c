@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 08:47:04 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/14 08:47:56 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 16:12:24 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,9 @@ static void	math_players_pos(t_env *env)
 		w = -1;
 		while (++w < env->plateau->width)
 		{
-			if (env->plateau->map[h][w] == env->my_symb
-				|| env->plateau->map[h][w] == env->my_symb + 32)
+			if (ft_toupper(env->plateau->map[h][w]) == env->my_symb)
 				env->plateau->heatmap[h][w] = MY_HEAT;
-			else if (env->plateau->map[h][w] == env->enemy_symb
-				|| env->plateau->map[h][w] == env->enemy_symb + 32)
+			else if (ft_toupper(env->plateau->map[h][w]) == env->enemy_symb)
 				env->plateau->heatmap[h][w] = ENEMY_HEAT;
 		}
 	}
