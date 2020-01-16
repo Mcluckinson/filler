@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:21:04 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 16:34:28 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 17:11:43 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void		free_heatmap(t_plateau *plateau, int height)
 	plateau->heatmap = NULL;
 }
 
-static void	ft_destroy_all(t_env *env)
+static void		ft_destroy_all(t_env *env)
 {
 	if (env)
 	{
@@ -62,7 +62,7 @@ static void	ft_destroy_all(t_env *env)
 	}
 }
 
-int	ft_free(int code, t_env *env)
+int				ft_free(int code, t_env *env)
 {
 	if (code == End_turn)
 	{
