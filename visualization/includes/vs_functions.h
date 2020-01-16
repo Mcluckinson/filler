@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 06:26:48 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 09:03:52 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define FUNCTIONS_H
 
 # include "vs_filler.h"
+
+void	print_in_file(char c, char *str, char **map); //delete
+
+/*
+**	calc_size.c
+*/
+t_math			calc_size(t_env *env);
 
 /*
 **	events.c

@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/16 04:36:23 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/16 08:28:09 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ HEADERS_NAME =	vs_define_value.h		\
 
 LIB = 			-L$(LIB_PATH) -lft
 
-SRC_NAME =		events.c				\
+SRC_NAME =		calc_size.c				\
+				events.c				\
 				init.c					\
 				main_loop.c				\
 				main.c					\

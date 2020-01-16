@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 04:10:55 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 09:02:24 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # define STRUCTS_H
 
 # include "vs_filler.h"
+
+typedef struct			s_math
+{
+	float				cell_shift;
+	float				cell_size;
+	int					start_x;
+	int					start_y;
+}						t_math;
 
 typedef struct			s_sdl
 {

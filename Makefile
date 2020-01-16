@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/16 01:32:22 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/16 04:21:27 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INC = $(addprefix -I, $(INC_PATH))
 HEADERS = $(addprefix, $(INC_PATH), $(HEADERS_NAME))
 
-FLAGS = 	-Wall -Werror -Wextra -Ofast -g
+FLAGS = 	-Ofast -g
+# FLAGS = 	-Wall -Werror -Wextra -Ofast -g
 
 HEADERS_NAME =	define_value.h		\
 				function.h			\

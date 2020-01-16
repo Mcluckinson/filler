@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 04:05:55 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 04:16:54 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 07:20:39 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	key_events(t_env *env, SDL_Event event)
 {
 	if (event.key.keysym.sym == SDLK_SPACE)
-		env->is_pause = true;
+		parse(env);
 }
 
 // void	mouse_events(t_env *env, SDL_Event event)
