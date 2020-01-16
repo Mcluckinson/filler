@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:53:49 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 09:02:24 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:10:45 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 
 # include "vs_filler.h"
 
+typedef enum			e_game_mode
+{
+	Pixel,
+	Gachi
+}						t_game_mode;
+
 typedef struct			s_math
 {
 	float				cell_shift;
 	float				cell_size;
 	int					start_x;
 	int					start_y;
+	float				my_score;
+	float				enemy_score;
 }						t_math;
 
 typedef struct			s_sdl
@@ -28,6 +36,8 @@ typedef struct			s_sdl
 	SDL_Window			*win;
 	SDL_Surface			*sur;
 	SDL_Event			event;
+	SDL_Surface			*player1;
+	SDL_Surface			*player2;
 }						t_sdl;
 
 typedef struct			s_plateau
@@ -44,6 +54,8 @@ typedef struct			s_env
 	t_sdl				*sdl;
 	t_plateau			*plateau;
 	bool				is_pause;
+	int					game_mode;
+	Mix_Music			*music[2];
 }						t_env;
 
 #endif

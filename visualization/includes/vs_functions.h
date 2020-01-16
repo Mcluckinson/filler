@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 01:50:17 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 09:03:52 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:05:11 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ void			mouse_events(t_env *env, SDL_Event event);
 */
 char			**init_map(const int height);
 t_plateau		*init_plateau(void);
-void			init_sdl(t_sdl *sdl);
 t_env			*init_env(void);
+
+/*
+**	init_sdl.c
+*/
+void			init_sdl(t_sdl *sdl);
 
 /*
 **	ft_exit.c
