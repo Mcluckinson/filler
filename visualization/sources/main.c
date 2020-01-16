@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 01:33:07 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 01:57:08 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 04:33:33 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int			main(void)
 
 	env = init_env();
 	init_sdl(env->sdl);
-	sdl_loop(env->sdl->win);
+	parse(env);
+	main_loop(env);
 	return (0);
 }

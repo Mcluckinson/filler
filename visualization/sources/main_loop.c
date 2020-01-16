@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sdl_loop.c                                         :+:      :+:    :+:   */
+/*   main_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 01:44:00 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 01:44:09 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 04:30:37 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vs_filler.h"
 
-void				sdl_loop(SDL_Window *win)
+void				main_loop(t_env *env)
 {
 	SDL_Event		event;
 
-	while (true)
+	while (!env->is_pause)
 	{
+		render(env);
 		SDL_WaitEvent(&event);
 		if (SDL_QUIT == event.type || SDLK_ESCAPE == event.key.keysym.sym)
 			break ;
-		SDL_UpdateWindowSurface(win);
+		if (event.type == SDL_KEYDOWN)
+			key_events(env, event);
+		// else if (event.type == SDL_MOUSEBUTTONDOWN)
+			// mouse_events(env, event);
+		SDL_UpdateWindowSurface(env->sdl->win);
+		SDL_Delay(1000 / 60);
 	}
-	SDL_DestroyWindow(win);
+	SDL_DestroyWindow(env->sdl->win);
 	SDL_Quit();
 }

@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 01:49:13 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 03:15:53 by sleonia          ###   ########.fr       */
+/*   Created: 2020/01/16 04:05:55 by sleonia           #+#    #+#             */
+/*   Updated: 2020/01/16 04:16:54 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vs_filler.h"
 
-void		ft_exit(const char *error_text)
+void	key_events(t_env *env, SDL_Event event)
 {
-	puts("\033[31m");
-	puts(error_text);
-	putchar('\n');
-	puts("\033[0m");
-	exit(1);
+	if (event.key.keysym.sym == SDLK_SPACE)
+		env->is_pause = true;
 }
+
+// void	mouse_events(t_env *env, SDL_Event event)
+// {
+	
+// }

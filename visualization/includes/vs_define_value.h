@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 02:33:42 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 01:53:12 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 06:10:56 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 # define MY_HEAT			-2
 # define ENEMY_HEAT			-1
 
-# define ERROR_MALLOC		"\033[31mMalloc error!\033[0m"
 # define HEIGHT				1080
 # define WIDTH				1920
-
 #endif

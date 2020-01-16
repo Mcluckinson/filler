@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/14 01:12:20 by sleonia           #+#    #+#              #
-#    Updated: 2020/01/16 01:56:03 by sleonia          ###   ########.fr        #
+#    Updated: 2020/01/16 04:36:23 by sleonia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ FRAMEDIR = /Users/$(USER)/Library/Frameworks
 SRC_PATH = ./sources/
 OBJ_PATH = ./objects/
 INC_PATH = ./includes/
+LIB_PATH = ../libft
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
@@ -33,24 +34,30 @@ INC_SDL = 		-I Frameworks/SDL2.framework/Versions/A/Headers 		\
 FRAME = 	-F Frameworks/ -framework SDL2 -framework SDL2_image 		\
             -framework SDL2_ttf -framework SDL2_mixer -rpath Frameworks/
 
-FLAGS = 	-Wall -Werror -Wextra -Ofast -g
+FLAGS = 	-Ofast -g
+# FLAGS = 	-Wall -Werror -Wextra -Ofast -g
 
 HEADERS_NAME =	vs_define_value.h		\
 				vs_function.h			\
 				vs_rt.h					\
 				vs_struct.h				\
 
-SRC_NAME =		ft_exit.c				\
+LIB = 			-L$(LIB_PATH) -lft
+
+SRC_NAME =		events.c				\
 				init.c					\
+				main_loop.c				\
 				main.c					\
-				sdl_loop.c				\
+				parse.c					\
+				render.c				\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@gcc $(FLAGS) -o $(NAME) $(OBJ) $(FRAME)
+	@Make -C $(LIB_PATH)
+	@gcc $(FLAGS) -o $(NAME) $(OBJ) $(LIB) $(FRAME)
 	 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(HEADERS)
 	@mkdir -p $(OBJ_PATH)
@@ -61,9 +68,6 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(HEADERS)
 $(FRAMEDIR):
 		@mkdir -p $(FRAMEDIR)
 		@rm -rf $(FRAMEDIR)/*
-
-visualization_refresh:
-	@make -C $(LIB_PATH)
 
 clean:
 	@find . -name ".DS_Store" -delete
