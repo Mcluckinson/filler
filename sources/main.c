@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 17:34:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2020/01/16 16:32:21 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 16:34:16 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,8 @@ int			main(void)
 		print_coords(env->x, env->y);
 		reset_coords(&env->x, &env->y);
 		ft_free(End_turn, env);
-		// ft_destroy_string_arr(env->piece->map);
-		// free_heatmap(env->plateau, env->plateau->height);
-		// ft_destroy_string_arr(env->plateau->map);
 	}
 	ft_free(Endgame, env);
-	// ft_memdel((void *)&env->plateau);
-	// ft_memdel((void *)&env->piece);
-	// ft_memdel((void *)&env);
 	return (0);
 }
 // rm ./sleonia.filler; clear ; make ; ./resources/filler_vm -p1 resources/players/grati.filler -p2 ./sleonia.filler -f resources/maps/map01

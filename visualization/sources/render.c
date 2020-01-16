@@ -6,13 +6,13 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 02:02:10 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 11:42:12 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 16:49:23 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vs_filler.h"
 
-static void		render_background(t_sdl *sdl)
+static void			render_background(t_sdl *sdl)
 {
 	SDL_Rect rect;
 
@@ -24,11 +24,11 @@ static void		render_background(t_sdl *sdl)
 				SDL_MapRGB(sdl->sur->format, 224, 224, 224));
 }
 
-static void		render_map(t_env *env)
+static void			render_map(t_env *env)
 {
-	SDL_Rect	rect;
-	int			x;
-	int			y;
+	SDL_Rect		rect;
+	int				x;
+	int				y;
 
 	y = -1;
 	calc_size(env);
@@ -59,18 +59,19 @@ static void		render_map(t_env *env)
 	}
 }
 
-static void	render_score(t_env *env)
+static void		render_score(t_env *env)
 {
-	int		n_digits;
-	int		sum_score;
-	float	percent;
+	SDL_Rect	rect;
+	int			n_digits;
+	int			sum_score;
+	float		percent;
 
 	sum_score = env->math->my_score + env->math->enemy_score;
 	n_digits = floor(log10(abs(sum_score))) + 1;
 	
 }
 
-void		render(t_env *env)
+void			render(t_env *env)
 {
 	render_background(env->sdl);
 	render_map(env);

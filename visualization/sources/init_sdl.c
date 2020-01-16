@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 11:01:36 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 11:51:01 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 17:05:03 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static void		load_textures(int game_mode, t_sdl *sdl)
 	}
 	else if (game_mode == Gachi)
 	{
-		if (!(sdl->player1 = IMG_Load("assets/images/gachi_boy.png")))
+		if (!(sdl->player1 = IMG_Load("assets/images/gachi_boy.jpg")))
 			ft_exit(SDL_GetError());
-		if (!(sdl->player2 = IMG_Load("assets/images/./assets/images/ricardo.webp")))
+		if (!(sdl->player2 = IMG_Load("assets/images/ricardo.png")))
 			ft_exit(SDL_GetError());
 	}
 }
@@ -58,6 +58,7 @@ void			init_sdl(int game_mode, t_sdl *sdl)
 	if (!(sdl->sur = SDL_GetWindowSurface(sdl->win)))
 		ft_exit(SDL_GetError());
 	load_textures(game_mode, sdl);
+	init_sdl_music(sdl->music);
 	if (!(sur_icon = IMG_Load("./assets/images/icon.png")))
 		ft_exit(SDL_GetError());
 	if (!(conv_sur_icon = SDL_ConvertSurface(sur_icon, sdl->sur->format, 0)))

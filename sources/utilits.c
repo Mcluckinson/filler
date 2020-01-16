@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 01:21:04 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 16:27:26 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 16:34:28 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,6 @@ static void		free_heatmap(t_plateau *plateau, int height)
 	plateau->heatmap = NULL;
 }
 
-
-// int				ft_free(int code, t_env *env)
-// {
-// 	if (code == Free_sub_struct
-// 		|| code == Free_plateau
-// 		|| code == Free_piece
-// 		|| code == Free_all)
-// 	{
-// 		if (code == Free_piece || code == Free_sub_struct 
-// 			|| code == Free_all)
-// 		{
-// 			ft_destroy_string_arr(env->piece->map);
-// 		}
-// 		if (code == Free_plateau || code == Free_sub_struct
-// 			|| code == Free_all)
-// 		{
-// 			ft_destroy_string_arr(env->plateau->map);
-// 			free_heatmap(env->plateau, env->plateau->height);
-// 		}
-// 	}
-// 	if (code == Free_all || code == Free_env)
-// 		ft_memdel((void *)&env->plateau);
-// 	return (1);
-// }
-
 static void	ft_destroy_all(t_env *env)
 {
 	if (env)
@@ -86,8 +61,6 @@ static void	ft_destroy_all(t_env *env)
 		ft_memdel((void *)&env);
 	}
 }
-
-
 
 int	ft_free(int code, t_env *env)
 {
