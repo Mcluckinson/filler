@@ -6,30 +6,28 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 08:27:29 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 11:11:21 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:42:55 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vs_filler.h"
 
-
-
-t_math		calc_size(t_env *env)
+void		calc_size(t_env *env)
 {
-	t_math	math;
 	int		plateau_height;
 	int		plateau_width;
 
 	if (env->plateau->width > env->plateau->height)
-		math.cell_shift = (env->sdl->sur->w * 0.9) / env->plateau->width;
+		env->math->cell_shift = (env->sdl->sur->w * 0.9) / env->plateau->width;
 	else
-		math.cell_shift = (env->sdl->sur->h * 0.9) / env->plateau->height;
-	plateau_height = math.cell_shift * env->plateau->height;
-	plateau_width = math.cell_shift * env->plateau->width;
-	math.cell_size = math.cell_shift * 85 / 100;
-	math.start_y = (env->sdl->sur->h - 50 - plateau_height
-						+ (math.cell_shift - math.cell_size)) / 2;
-	math.start_x = (env->sdl->sur->w - 500 - plateau_width
-						+ (math.cell_shift - math.cell_size)) / 2;
-	return (math);
+		env->math->cell_shift = (env->sdl->sur->h * 0.9) / env->plateau->height;
+	plateau_height = env->math->cell_shift * env->plateau->height;
+	plateau_width = env->math->cell_shift * env->plateau->width;
+	env->math->cell_size = env->math->cell_shift * 85 / 100;
+	env->math->start_y = (env->sdl->sur->h + 50 - plateau_height
+						+ (env->math->cell_shift - env->math->cell_size)) / 2;
+	env->math->start_x = (env->sdl->sur->w - 500 - plateau_width
+						+ (env->math->cell_shift - env->math->cell_size)) / 2;
+	env->math->enemy_score = 0;
+	env->math->my_score = 0;
 }

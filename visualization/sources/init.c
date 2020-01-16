@@ -6,7 +6,7 @@
 /*   By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 01:46:47 by sleonia           #+#    #+#             */
-/*   Updated: 2020/01/16 11:01:50 by sleonia          ###   ########.fr       */
+/*   Updated: 2020/01/16 11:20:41 by sleonia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_env			*init_env(void)
 
 	env = (t_env *)ft_safe_malloc(sizeof(t_env));
 	env->sdl = (t_sdl *)ft_safe_malloc(sizeof(t_sdl));
+	env->math = (t_math *)ft_safe_malloc(sizeof(t_math));
 	env->plateau = NULL;
 	env->is_pause = false;
 	return (env);
